@@ -1,0 +1,50 @@
+﻿@model AplicacaoAgrotoxicos.Models.aplicacao
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>aplicacao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.produto.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.produto.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hecitares)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hecitares)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fk_produto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fk_produto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataLimite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataLimite)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,27 @@
+﻿@model AplicacaoAgrotoxicos.Models.exemplo
+
+@{
+    ViewBag.Title = "Detalhe Exemplo";
+}
+
+<h2>Details</h2>
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Detalhe Exemplo</h4>
+        </div>
+        <div class="modal-body">
+
+                <dt>
+                    <label for="nome">Nome</label>
+                <dd>
+                    @Html.DisplayFor(model => model.nome)
+                </dd>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        </div>
+    </div>
+</div>

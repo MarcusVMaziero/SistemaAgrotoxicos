@@ -1,0 +1,35 @@
+﻿@model AplicacaoAgrotoxicos.Models.propriedade
+
+@{
+    ViewBag.Title = "Detalhe Propriedade";
+}
+
+<h2>Details</h2>
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Detalhe Propriedade</h4>
+        </div>
+        <div class="modal-body">
+
+            <dt>
+                <label for="nome">Nome</label>
+                <dd>
+                    @Html.DisplayFor(model => model.nome)
+                </dd>
+                <label for="nome_proprietario">Nome Proprietário</label>
+                <dd>
+                    @Html.DisplayFor(model => model.nome_proprietario)
+                </dd>
+                <label for="endereco">Endereço</label>
+                <dd>
+                    @Html.DisplayFor(model => model.endereco)
+                </dd>
+
+</div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        </div>
+    </div>
+</div>

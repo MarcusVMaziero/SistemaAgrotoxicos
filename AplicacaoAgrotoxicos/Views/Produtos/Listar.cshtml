@@ -1,0 +1,84 @@
+﻿@model IEnumerable<AplicacaoAgrotoxicos.Models.produto>
+@{
+    ViewBag.Title = "Listar";
+}
+<h2>Produtos</h2>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th class="action">Nome</th>
+                    <th class="action">Editar</th>
+                    <th class="action">Detalhar</th>
+                    <th class="action">Deletar</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nome)
+                        </td>
+                        <td class="action">
+                            <a href="" data-id="@item.id" class="center-block edit">
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                            </a>
+                        </td>
+                        <td class="action">
+                            <a href="" data-id="@item.id" class="center-block detail">
+                                <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                            </a>
+                        </td>
+                        <td class="action">
+                            <a href="" data-id="@item.id" class="center-block delete">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <button type="button" class="btn btn-success cadastrar">Cadastrar</button>
+    </div>
+</div>
+<div id="modal" class="modal fade" role="dialog" />
+@section scripts{
+    <script>$(function () {
+            $(".detail").click(function (e) {
+                e.preventDefault();
+                var id = $(this).attr("data-id");
+                $("#modal").load("Detalhe?id=" + id, function () {
+                    $("#modal").modal();
+                })
+            });
+
+            $(".edit").click(function (e) {
+                e.preventDefault();
+                var id = $(this).attr("data-id");
+                $("#modal").load("Editar?id=" + id, function () {
+                    $("#modal").modal();
+                })
+            });
+
+            $(".delete").click(function (e) {
+                e.preventDefault();
+                var id = $(this).attr("data-id");
+                $("#modal").load("Deletar?id=" + id, function () {
+                    $("#modal").modal();
+                })
+            });
+
+            $(".cadastrar").click(function () {
+                $("#modal").load("Cadastrar", function () {
+                    $("#modal").modal();
+                })
+            });
+        })</script>
+}
